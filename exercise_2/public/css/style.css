@@ -2,3 +2,13 @@ img {
     width: 200px;
     height: 300px;
 }
+
+h1{
+    color: navy;
+    font-size: 40px;
+}
+
+.movies{
+    text-align: center;
+    background-color: darkgray;
+}

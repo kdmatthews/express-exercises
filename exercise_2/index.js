@@ -58,7 +58,7 @@ const myMovies = [
     { movieName: "Spiderman", poster: `<img src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFydmVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">`},
     { movieName: "Lord of the Rings", poster: `<img src="https://images.unsplash.com/photo-1590002893558-64f0d58dcca4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bG9yZCUyMG9mJTIwdGhlJTIwcmluZ3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">` },
 ]
-
+app.use(express.static('public'));
 app.get('/movies', (req, res) => {
     res.render('movies', {
         locals: {
