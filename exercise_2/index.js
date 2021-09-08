@@ -45,20 +45,24 @@ app.post('/error', (req, res) => {
 })
 // ***
 app.get('/Kayla', (req, res) => {
-    res.send(`My name is ${myInfo.name}. I live in ${myInfo.city}, ${myInfo.state}.`)
-        })
+    // res.send(`My name is ${myInfo.name}. I live in ${myInfo.city}, ${myInfo.state}.`)
+    //     })
+    res.send(myInfo)
+})
 
 // ***
 const myMovies = [
-    { movieName: "Suicide Squad", poster: "https://images.unsplash.com/photo-1511875762315-c773eb98eec0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" },
-    { movieName: "Star Wars", poster: "https://images.unsplash.com/photo-1478479474071-8a3014d422c8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHN0YXIlMjB3YXJzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
-    { movieName: "Gaurdians of the Galaxy", poster: "https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFydmVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" },
-    { movieName: "Spiderman", poster: "https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFydmVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"},
+    { movieName: "Suicide Squad", poster: `<img src="https://images.unsplash.com/photo-1511875762315-c773eb98eec0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">` },
+    { movieName: "Star Wars", poster: `<img src="https://images.unsplash.com/photo-1478479474071-8a3014d422c8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHN0YXIlMjB3YXJzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">` },
+    { movieName: "Gaurdians of the Galaxy", poster: `<img src="https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFydmVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">` },
+    { movieName: "Spiderman", poster: `<img src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFydmVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">`},
+    { movieName: "Lord of the Rings", poster: `<img src="https://images.unsplash.com/photo-1590002893558-64f0d58dcca4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bG9yZCUyMG9mJTIwdGhlJTIwcmluZ3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">` },
 ]
-app.post('/movies', (req, res) => {
+
+app.get('/movies', (req, res) => {
     res.render('movies', {
         locals: {
-            movies,
+            myMovies,
         }
     })
 })
